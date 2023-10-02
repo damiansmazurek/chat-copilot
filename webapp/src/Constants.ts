@@ -6,6 +6,7 @@ export const Constants = {
         updateCheckIntervalSeconds: 60 * 5,
         CONNECTION_ALERT_ID: 'connection-alert',
         importTypes: '.txt,.pdf,.docx,.md,.jpg,.jpeg,.png,.tif,.tiff,.bmp,.gif',
+        subtitle: (process.env.REACT_APP_SUBTITLE as string) ?? 'Chat Copilot'
     },
     msal: {
         method: 'redirect', // 'redirect' | 'popup'

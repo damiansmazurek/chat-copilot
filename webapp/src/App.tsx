@@ -2,7 +2,7 @@
 
 import { AuthenticatedTemplate, UnauthenticatedTemplate, useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { FluentProvider, Subtitle1, makeStyles, shorthands, tokens } from '@fluentui/react-components';
-
+import {Constants} from './Constants';
 import * as React from 'react';
 import { FC, useEffect } from 'react';
 import { UserSettingsMenu } from './components/header/UserSettingsMenu';
@@ -144,7 +144,7 @@ const App: FC = () => {
                     <UnauthenticatedTemplate>
                         <div className={classes.container}>
                             <div className={classes.header}>
-                                <Subtitle1 as="h1">{process.env.REACT_APP_SUBTITLE as string}</Subtitle1>
+                                <Subtitle1 as="h1">{Constants.app.subtitle}</Subtitle1>
                             </div>
                             {appState === AppState.SigningOut && <Loading text="Signing you out..." />}
                             {appState !== AppState.SigningOut && <Login />}
@@ -173,7 +173,7 @@ const Chat = ({
     return (
         <div className={classes.container}>
             <div className={classes.header}>
-                <Subtitle1 as="h1">{process.env.REACT_APP_SUBTITLE as string}</Subtitle1>
+                <Subtitle1 as="h1">{Constants.app.subtitle}</Subtitle1>
                 {appState > AppState.SettingUserInfo && (
                     <div className={classes.cornerItems}>
                         <div className={classes.cornerItems}>
